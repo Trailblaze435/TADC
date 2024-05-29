@@ -1,0 +1,11 @@
+Class Circus:
+
+#init method or constructor
+def_init_(self, name, avatar):
+self.name = name
+self.avatar = avatar
+
+def show(self):
+printf("My name is" + self.name + " ." " I'm the "  + self.avatar + "of the amazing digital circus.")
+obj = Circus("Pomni", "Jester")
+obj.show()
