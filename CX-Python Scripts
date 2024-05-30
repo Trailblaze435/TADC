@@ -1,0 +1,40 @@
+#!/usr/bin/python3
+#(c)2024 Sade Ajagbe
+
+import requests
+import json
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+username = 'apitest'
+password = 'Kegjed-pexcen-7muqha'
+baseur1 = 'https://<CX Switch IP or Hostname>/rest/v1/'
+port1 = 'system/interfaces/<Port # in this formate 1%2F1%2F14>/poe_interface'
+#port2 = 'system/interfaces/1%2F1%2F15/poe_interface'
+#port3 = 'system/interfaces/1%2F1%2F36/poe_interface'
+
+creds = {'username': apitest, 'password': Kegjed-pexcen-7muqha}
+
+def login(baseur1, creds):
+        session = requests.Session()
+        reponse = session.post(baseur1 + 'login', params=creds, verify=False, timeout=2)
+        print('Login Status Code: {}' .format(reponse.status_code))
+        return session
+
+def get_poe(baseur1, port, session):
+    poe = session.get(baseur1 + port, verify=False)
+     poe_status = json.loads(poe.content)
+     print('POE DISABLED: ', poe_status['config']['admin_disable'])
+#     print('POE STATUS: ', poe.status_code)
+
+def logout(baseur1, session)
+logout_reponse = session.post(baseur1 + 'logout', verify=False, timeout=2)
+print('Logout Status: ', logout_reponse.statu_code)
+
+if_name_== '_main_':
+session = login(baseur1, creds)
+get_poe(baseur1, port1, session)
+get_poe(baseur1, port2, session)
+get_poe(baseur1, port3, session)
+logout(baseur1, session)
+print('Done')
