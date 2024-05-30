@@ -1,11 +1,14 @@
-Class Circus:
-
-#init method or constructor
-def_init_(self, name, avatar):
-self.name = name
-self.avatar = avatar
-
-def show(self):
-printf("My name is" + self.name + " ." " I'm the "  + self.avatar + "of the amazing digital circus.")
-obj = Circus("Pomni", "Jester")
-obj.show()
+class Circus:
+  
+  def __init__(self, name, lastname):
+    self.name = name
+    self.lastname = lastname
+    
+    def get_name(self):
+        return self.name
+    
+    def get_lastname(self):
+        return self.lastname
+    
+p = Circus("Pomni", "Jester")
+print("Hello, My name is" + p.name + "." "The" + p.lastname + "of the digital circus")
